@@ -10,7 +10,7 @@ git add .
 
 git commit -m "Adicione uma descrição concisa das alterações aqui"
 
-git push aulas_bee_projeto_pratico2 emerson
+git push origin emerson
 
 #Pull Request
 
