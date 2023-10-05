@@ -10,4 +10,6 @@ public class Pratico2Application {
 		SpringApplication.run(Pratico2Application.class, args);
 	}
 
+
+
 }
