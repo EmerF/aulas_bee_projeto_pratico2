@@ -9,5 +9,5 @@ public class Pratico2Application {
 	public static void main(String[] args) {
 		SpringApplication.run(Pratico2Application.class, args);
 	}
-
+	...............
 }
