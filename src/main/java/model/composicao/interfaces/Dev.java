@@ -7,6 +7,7 @@ public class Dev extends Funcionario {
     }
     @Override
     public double calculaAjudaCusto() {
+
         return getSalario() * 0.10;
     }
 
