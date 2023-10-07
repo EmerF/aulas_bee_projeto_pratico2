@@ -1,23 +1,20 @@
 package com.ambev.pratico2.exception;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
-@RestController
+@ControllerAdvice
 public class ExceptionHandlerController {
 
-    @GetMapping("/api/nome/{erro}")
-    public String getNome(@PathVariable String nome) {
-        if(nome.equals("erro")) {
-            throw new CustomNotFoundException("erro no serviço");
-        }
-        return "Nome: " + nome;
+    @ExceptionHandler(CustomNotFoundException.class)
+    public ResponseEntity<String>handleCustomNotFoundException(CustomNotFoundException ex){
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
     }
-    @RequestMapping("/api/generic")
-    public String generic() throws Exception {
-        throw new Exception("Erro interno do servidor");
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<String>handleGenericException(Exception ex){
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(ex.getMessage());
     }
 }
 

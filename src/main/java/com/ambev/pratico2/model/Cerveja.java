@@ -16,4 +16,5 @@ private boolean comAlcool;
     public void setComAlcool(boolean comAlcool) {
         this.comAlcool = comAlcool;
     }
+
 }
