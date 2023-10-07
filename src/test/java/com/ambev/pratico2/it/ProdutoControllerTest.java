@@ -1,5 +1,5 @@
 package com.ambev.pratico2.it;
-/*
+
 import com.ambev.techempowers.model.Cerveja;
 import com.ambev.techempowers.model.Produto;
 import com.ambev.techempowers.model.Tipo;
@@ -77,6 +77,4 @@ public class ProdutoControllerTest {
     }
 
 
-}*/
-
-
+}
