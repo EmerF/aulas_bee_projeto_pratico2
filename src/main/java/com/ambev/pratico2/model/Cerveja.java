@@ -7,6 +7,11 @@ public class Cerveja extends Produto{
         super(id, descricao, preco);
         this.comAlcool = comAlcool;
     }
+
+    public Cerveja() {
+        super();
+    }
+
     public boolean isComAlcool() {
         return comAlcool;
     }

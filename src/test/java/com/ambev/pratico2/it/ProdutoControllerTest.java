@@ -1,11 +1,8 @@
 package com.ambev.pratico2.it;
-/*
-import com.ambev.techempowers.model.Cerveja;
-import com.ambev.techempowers.model.Produto;
-import com.ambev.techempowers.model.Tipo;
-import com.ambev.techempowers.model.TipoProduto;
-import com.ambev.techempowers.repository.ProdutoRepository;
-import com.ambev.techempowers.repository.TipoProdutoRepository;
+
+import com.ambev.pratico2.model.Cerveja;
+import com.ambev.pratico2.model.Produto;
+import com.ambev.pratico2.repository.ProdutoRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -51,7 +48,7 @@ public class ProdutoControllerTest {
     }
 
     @Test
-    public void testGenerico() throws Exception {
+    public void testGeneric() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/api/generic")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNotFound());
@@ -62,7 +59,7 @@ public class ProdutoControllerTest {
         Produto cerveja = new Cerveja();
         cerveja.setDescricao("Cerveja de teste");
         cerveja.setPreco(5.99);
-        ((Cerveja) cerveja).setTemAlcool(true);
+        ((Cerveja) cerveja).setcomAlcool(true);
         String produtoJson = objectMapper.writeValueAsString(cerveja);
 
         mockMvc.perform(MockMvcRequestBuilders.post("/api/produtos")
@@ -71,12 +68,9 @@ public class ProdutoControllerTest {
                 .andExpect(status().isOk());
 
         // Verifica se o produto foi cadastrado
-        Produto produtoCerveja = produtoRepository.findByNome("Cerveja Teste").get(0);
+        Produto produtoCerveja = (Produto) produtoRepository.findByNome("Cerveja Teste").get(0);
         assert produtoCerveja != null;
         assert produtoCerveja.getNome().equals("Cerveja Teste");
     }
-
-
-}*/
-
+}
 

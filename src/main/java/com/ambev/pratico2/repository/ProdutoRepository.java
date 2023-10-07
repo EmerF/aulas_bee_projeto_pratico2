@@ -9,4 +9,5 @@ import java.util.List;
 @Repository
 public interface ProdutoRepository extends MongoRepository<Produto, String> {
 
+    List<Object> findByNome(String cervejaTeste);
 }
