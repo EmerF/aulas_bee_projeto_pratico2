@@ -9,7 +9,7 @@ import com.ambev.pratico2.models.Produto;
         List<Produto> findByDescricao(String descricao);
         List<Produto> findByPreco(Double preco);
         List<Produto> findByDescricaoAndPreco(String descricao, Double preco);
-
+        Produto save(Produto produto);
     }
 
 

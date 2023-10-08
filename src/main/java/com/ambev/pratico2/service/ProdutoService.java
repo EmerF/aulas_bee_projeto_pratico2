@@ -6,16 +6,23 @@ import org.springframework.stereotype.Service;
 import com.ambev.pratico2.models.Produto;
 import com.ambev.pratico2.repository.ProdutoRepository;
 
+import java.util.List;
 @Service
 public class ProdutoService {
-    private ProdutoRepository produtoRepository;
 
-        @Autowired
-        public void ProdutoService(ProdutoRepository produtoRepository) {
-            this.produtoRepository = produtoRepository;
-        }
-        public Produto salvarProduto(Produto produto) {
-            return produtoRepository.save(produto);
-        }
+    private final ProdutoRepository produtoRepository;
+
+    @Autowired
+    public ProdutoService(ProdutoRepository produtoRepository) {
+        this.produtoRepository = produtoRepository;
+    }
+
+    public Produto salvarProduto(Produto produto) {
+        return produtoRepository.save(produto);
+    }
+
+    public List<Produto> listarProdutos() {
+        return produtoRepository.findAll();
+    }
 }
 
