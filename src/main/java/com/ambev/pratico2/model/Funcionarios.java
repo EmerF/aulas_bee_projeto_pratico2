@@ -12,7 +12,7 @@ public abstract class Funcionarios implements CalculoAjudaCusto, ImpostoRenda {
     private Endereco endereco;
 
    
-    public Funcionarios(String nome, String cpf, String telefone, double salario, Endereco endereco) {
+   public Funcionarios(String nome, String cpf, String telefone, double salario, Endereco endereco) {
         this.nome = nome;
         this.cpf = cpf;
         this.telefone = telefone;
@@ -43,5 +43,13 @@ public abstract class Funcionarios implements CalculoAjudaCusto, ImpostoRenda {
     }
     public void setSalario(Double salario) {
         this.salario = salario;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
 }
