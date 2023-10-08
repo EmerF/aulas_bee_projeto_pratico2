@@ -1,12 +1,13 @@
-package com.ambev.pratico2.servicos;
+package com.ambev.pratico2.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ambev.pratico2.produtos.Produto;
+import com.ambev.pratico2.models.Produto;
+import com.ambev.pratico2.repository.ProdutoRepository;
 
 @Service
-public class Servicos {
+public class ProdutoService {
     private ProdutoRepository produtoRepository;
 
         @Autowired

@@ -1,4 +1,4 @@
-package com.ambev.pratico2.produtos;
+package com.ambev.pratico2.models;
 
 public class Refrigerante extends Produto{
     private boolean comAcucar;

@@ -1,4 +1,4 @@
-package com.ambev.pratico2.entidades;
+package com.ambev.pratico2.models;
 
 public abstract class Funcionario {
     public abstract double calcularAjudaCusto();

@@ -1,4 +1,4 @@
-package com.ambev.pratico2.produtos;
+package com.ambev.pratico2.models;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
