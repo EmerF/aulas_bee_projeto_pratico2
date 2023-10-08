@@ -1,12 +1,8 @@
 package com.ambev.pratico2.it;
-/*
-import com.ambev.techempowers.model.Cerveja;
-import com.ambev.techempowers.model.Produto;
-import com.ambev.techempowers.model.Tipo;
-import com.ambev.techempowers.model.TipoProduto;
-import com.ambev.techempowers.repository.ProdutoRepository;
-import com.ambev.techempowers.repository.TipoProdutoRepository;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
+import model.heranca.polimorfismo.Cerveja;
+import model.heranca.polimorfismo.Produto;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +16,7 @@ import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import repository.ProdutoRepository;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -59,7 +56,7 @@ public class ProdutoControllerTest {
 
     @Test
     public void testCadastrarProdutoEVerificarCadastro() throws Exception {
-        Produto cerveja = new Cerveja();
+        Produto cerveja = new Cerveja(1,"Stella","Cerveja long 269ml",2.15,true);
         cerveja.setDescricao("Cerveja de teste");
         cerveja.setPreco(5.99);
         ((Cerveja) cerveja).setTemAlcool(true);
@@ -77,6 +74,6 @@ public class ProdutoControllerTest {
     }
 
 
-}*/
+}
 
 
