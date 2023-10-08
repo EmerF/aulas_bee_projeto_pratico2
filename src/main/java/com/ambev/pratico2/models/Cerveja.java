@@ -13,4 +13,12 @@ import lombok.Data;
             super(descricao, preco);
             this.comAlcool = comAlcool;
         }
+
+    public boolean isComAlcool() {
+        return comAlcool;
+    }
+
+    public void setComAlcool(final boolean comAlcool) {
+        this.comAlcool = comAlcool;
+    }
 }

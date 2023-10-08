@@ -7,4 +7,12 @@ public class Refrigerante extends Produto{
         super(descricao, preco);
         this.comAcucar = comAcucar;
     }
+
+    public boolean getComAcucar() {
+        return comAcucar;
+    }
+
+    public void setComAcucar(boolean comAcucar) {
+        this.comAcucar = comAcucar;
+    }
 }

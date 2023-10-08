@@ -15,18 +15,15 @@ public class ProdutoControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
-    @Test
-    public void testSalvarProduto() throws Exception {
-        String jsonProduto = "{\"descricao\": \"Produto de Teste\", \"preco\": 10.0}";
-
-        mockMvc
-                .perform(MockMvcRequestBuilders
-                                 .post("/api/produtos")
-                                 .contentType(MediaType.APPLICATION_JSON)
-                                 .content(jsonProduto))
-                .andExpect(MockMvcResultMatchers
-                                   .status()
-                                   .isCreated());
-
+@Test
+public void testarSalvarProduto() throws Exception {
+    String json = "{\"descricao\":\"Cerveja\",\"preco\":10.0,\"comAlcool\":true}";
+    mockMvc.perform(MockMvcRequestBuilders.post("/api/produtos")
+        .contentType(MediaType.APPLICATION_JSON)
+        .content(json))
+        .andExpect(MockMvcResultMatchers.status().isCreated())
+        .andExpect(MockMvcResultMatchers.jsonPath("$.descricao").value("Cerveja"))
+        .andExpect(MockMvcResultMatchers.jsonPath("$.preco").value(10.0))
+        .andExpect(MockMvcResultMatchers.jsonPath("$.comAlcool").value(true));
     }
 }

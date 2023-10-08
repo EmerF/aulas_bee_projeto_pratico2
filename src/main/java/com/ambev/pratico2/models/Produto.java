@@ -1,6 +1,6 @@
 package com.ambev.pratico2.models;
 
-public class Produto {
+public abstract class Produto {
     private String id;
     private String descricao;
     private Double preco;
