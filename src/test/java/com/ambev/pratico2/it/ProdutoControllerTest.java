@@ -1,11 +1,11 @@
 package com.ambev.pratico2.it;
-/*
-import com.ambev.techempowers.model.Cerveja;
-import com.ambev.techempowers.model.Produto;
-import com.ambev.techempowers.model.Tipo;
-import com.ambev.techempowers.model.TipoProduto;
-import com.ambev.techempowers.repository.ProdutoRepository;
-import com.ambev.techempowers.repository.TipoProdutoRepository;
+
+import com.ambev.pratico2.Model.Cerveja;
+import com.ambev.pratico2.Model.Produto;
+import com.ambev.pratico2.Model.Tipo;
+import com.ambev.pratico2.Model.TipoProduto;
+import com.ambev.pratico2.Repository.ProdutoRepository;
+import com.ambev.pratico2.Repository.TipoProdutoRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -77,6 +77,6 @@ public class ProdutoControllerTest {
     }
 
 
-}*/
+}
 
 
