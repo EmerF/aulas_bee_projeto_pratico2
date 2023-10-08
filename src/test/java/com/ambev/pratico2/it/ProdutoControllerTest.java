@@ -50,7 +50,7 @@ public class ProdutoControllerTest {
     }
 
     @Test
-    public void testCadastrarProdutoEVerificarCadastro() throws Exception {
+    public void testCadastrarProduto() throws Exception {
         Produto cerveja = new Cerveja(1, "Spaten", "One Way 600ml",8.60, true);
         cerveja.setDescricao("One Way 600ml");
         cerveja.setPreco(8.60);
