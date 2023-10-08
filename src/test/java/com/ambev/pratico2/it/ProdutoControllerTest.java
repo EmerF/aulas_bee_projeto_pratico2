@@ -1,11 +1,8 @@
 package com.ambev.pratico2.it;
-/*
-import com.ambev.techempowers.model.Cerveja;
-import com.ambev.techempowers.model.Produto;
-import com.ambev.techempowers.model.Tipo;
-import com.ambev.techempowers.model.TipoProduto;
-import com.ambev.techempowers.repository.ProdutoRepository;
-import com.ambev.techempowers.repository.TipoProdutoRepository;
+
+import com.ambev.pratico2.model.Cerveja;
+import com.ambev.pratico2.model.Produto;
+import com.ambev.pratico2.repository.ProdutoRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -21,8 +18,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -38,11 +35,6 @@ public class ProdutoControllerTest {
     private ObjectMapper objectMapper;
 
 
-    @BeforeEach
-    public void setUp() {
-        // Limpar o banco de dados antes de cada teste
-        produtoRepository.deleteAll();
-    }
     @Test
     public void testErroBadRequest() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/api/nome/erro")
@@ -58,25 +50,14 @@ public class ProdutoControllerTest {
     }
 
     @Test
-    public void testCadastrarProdutoEVerificarCadastro() throws Exception {
-        Produto cerveja = new Cerveja();
-        cerveja.setDescricao("Cerveja de teste");
-        cerveja.setPreco(5.99);
-        ((Cerveja) cerveja).setTemAlcool(true);
-        String produtoJson = objectMapper.writeValueAsString(cerveja);
+    public void testCadastrarProduto() throws Exception {
+        Produto cerveja = new Cerveja(1, "Spaten", "One Way 600ml",8.60, true);
+        cerveja.setDescricao("One Way 600ml");
+        cerveja.setPreco(8.60);
+        ((Cerveja) cerveja).setComAlcool(true);
 
-        mockMvc.perform(MockMvcRequestBuilders.post("/api/produtos")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(produtoJson))
-                .andExpect(status().isOk());
-
-        // Verifica se o produto foi cadastrado
-        Produto produtoCerveja = produtoRepository.findByNome("Cerveja Teste").get(0);
-        assert produtoCerveja != null;
-        assert produtoCerveja.getNome().equals("Cerveja Teste");
     }
 
-
-}*/
+}
 
 
