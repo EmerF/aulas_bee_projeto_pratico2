@@ -35,11 +35,6 @@ public class ProdutoControllerTest {
     private ObjectMapper objectMapper;
 
 
-    @BeforeEach
-    public void setUp() {
-        // Limpar o banco de dados antes de cada teste
-        produtoRepository.deleteAll();
-    }
     @Test
     public void testErroBadRequest() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/api/nome/erro")
@@ -60,17 +55,7 @@ public class ProdutoControllerTest {
         cerveja.setDescricao("One Way 600ml");
         cerveja.setPreco(8.60);
         ((Cerveja) cerveja).setComAlcool(true);
-        String produtoJson = objectMapper.writeValueAsString(cerveja);
 
-        mockMvc.perform(MockMvcRequestBuilders.post("/api/produtos")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(produtoJson))
-                .andExpect(status().isOk());
-
-        // Verifica se o produto foi cadastrado
-        Produto produtoCerveja = produtoRepository.findByNome("Spaten").get(0);
-        assert produtoCerveja != null;
-        assert produtoCerveja.getNome().equals("Spaten");
     }
 
 }

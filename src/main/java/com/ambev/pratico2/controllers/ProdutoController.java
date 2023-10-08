@@ -32,15 +32,6 @@ public class ProdutoController {
             return produtoService.salvarProduto(produto);
         }
 
-    @GetMapping("/consultar/{nome}")
-    public ResponseEntity<List<Produto>> consultarProdutos(@PathVariable String nome) {
-        List<Produto> produto = produtoService.consultarPorNome(nome);
-        if (produto != null) {
-            return ResponseEntity.ok(produto);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
-    }
     @GetMapping("/erro")
     public ResponseEntity erroProduto() {
         return new ResponseEntity<>( HttpStatus.NOT_FOUND);
