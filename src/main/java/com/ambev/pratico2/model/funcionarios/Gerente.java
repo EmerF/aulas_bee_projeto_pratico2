@@ -13,7 +13,7 @@ public class Gerente extends Funcionario implements CalculoAjudaCusto, ImpostoDe
     }
 
     @Override
-    public double calcularAjudaCusto() {
+    public double calculoAjudaCusto() {
         return getSalario() * 0.05;
     }
 

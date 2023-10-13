@@ -47,7 +47,7 @@ public class ProdutoController {
         }
     }
     @GetMapping("/error")
-    public ResponseEntity<Void> errorProduct() {
+    public ResponseEntity<String> errorProduct() {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 }

@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class ExceptionHandlerController {
 
     @ExceptionHandler(CustomNotFoundException.class)
-    public ResponseEntity<String> handleCustomNotFoundException(CustomNotFoundException exception) {
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(exception.getMessage());
+    public ResponseEntity<String> handleCustomNotFoundException(CustomNotFoundException ex) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<String> handleGenericException( Exception exception) {
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(exception.getMessage());
+    public ResponseEntity<String> handleGenericException(Exception ex) {
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(ex.getMessage());
     }
 }

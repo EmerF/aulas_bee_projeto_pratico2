@@ -29,6 +29,4 @@ public class ProdutoService {
     public List<Produto> consultarPorNome(String nome) {
         return produtoRepository.findByNome(nome);
     }
-
-    // Outros métodos de serviço, como buscar, atualizar e excluir produtos
 }

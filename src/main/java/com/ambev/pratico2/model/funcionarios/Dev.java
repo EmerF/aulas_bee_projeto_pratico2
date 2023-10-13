@@ -10,7 +10,7 @@ public class Dev extends Funcionario implements CalculoAjudaCusto, ImpostoDeRend
     }
 
     @Override
-    public double calcularAjudaCusto() {
+    public double calculoAjudaCusto() {
         return getSalario() * 0.1;
     }
 

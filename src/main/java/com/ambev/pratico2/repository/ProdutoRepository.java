@@ -7,5 +7,4 @@ import java.util.List;
 
 public interface ProdutoRepository extends MongoRepository<Produto, String> {
     List<Produto> findByNome(String nome);
-    // Você pode adicionar métodos personalizados de consulta, se necessário
 }
