@@ -6,17 +6,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class Pratico2ApplicationTests {
 
-	@Test
-	void contextLoads() {
-		System.out.println("Funcionou2..");
-	}
+    @Test
+    void contextLoads() {
+        System.out.println("Funcionou2..");
+    }
 
 }
-
-
-
-
-
-
-
-
