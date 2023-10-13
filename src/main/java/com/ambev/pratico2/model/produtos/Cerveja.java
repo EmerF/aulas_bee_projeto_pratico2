@@ -7,8 +7,9 @@ public class Cerveja extends Produto {
 
     private boolean comAlcool;
 
-    public Cerveja(String id, String nome, String descricao, double preco) {
+    public Cerveja(String id, String nome, String descricao, double preco, boolean comAlcool) {
         super(id, nome, descricao, preco);
+        this.comAlcool = comAlcool;
     }
 
     public boolean isComAlcool() {

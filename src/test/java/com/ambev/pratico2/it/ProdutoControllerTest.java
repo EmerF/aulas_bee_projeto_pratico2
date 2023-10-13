@@ -1,11 +1,8 @@
 package com.ambev.pratico2.it;
-/*
-import com.ambev.techempowers.model.Cerveja;
-import com.ambev.techempowers.model.Produto;
-import com.ambev.techempowers.model.Tipo;
-import com.ambev.techempowers.model.TipoProduto;
-import com.ambev.techempowers.repository.ProdutoRepository;
-import com.ambev.techempowers.repository.TipoProdutoRepository;
+
+import com.ambev.pratico2.model.produtos.Cerveja;
+import com.ambev.pratico2.model.produtos.Produto;
+import com.ambev.pratico2.repository.ProdutoRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -40,7 +37,6 @@ public class ProdutoControllerTest {
 
     @BeforeEach
     public void setUp() {
-        // Limpar o banco de dados antes de cada teste
         produtoRepository.deleteAll();
     }
     @Test
@@ -59,10 +55,11 @@ public class ProdutoControllerTest {
 
     @Test
     public void testCadastrarProdutoEVerificarCadastro() throws Exception {
-        Produto cerveja = new Cerveja();
-        cerveja.setDescricao("Cerveja de teste");
-        cerveja.setPreco(5.99);
-        ((Cerveja) cerveja).setTemAlcool(true);
+        String descricaoCerveja = "Sabor leve, cor clara e aroma discreto";
+        Produto cerveja = new Cerveja("1", null, null, 0, false);
+        cerveja.setDescricao(descricaoCerveja);
+        cerveja.setPreco(6.99);
+        ((Cerveja) cerveja).setComAlcool(true);
         String produtoJson = objectMapper.writeValueAsString(cerveja);
 
         mockMvc.perform(MockMvcRequestBuilders.post("/api/produtos")
@@ -70,13 +67,11 @@ public class ProdutoControllerTest {
                         .content(produtoJson))
                 .andExpect(status().isOk());
 
-        // Verifica se o produto foi cadastrado
-        Produto produtoCerveja = produtoRepository.findByNome("Cerveja Teste").get(0);
+        Produto produtoCerveja = produtoRepository.findByNome(descricaoCerveja).get(0);
         assert produtoCerveja != null;
-        assert produtoCerveja.getNome().equals("Cerveja Teste");
+        assert produtoCerveja.getDescricao().equals(descricaoCerveja);
     }
 
-
-}*/
+}
 
 
