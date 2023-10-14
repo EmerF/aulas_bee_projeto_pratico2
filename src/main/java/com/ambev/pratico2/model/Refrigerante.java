@@ -5,8 +5,8 @@ public class Refrigerante extends Produto {
 
     private boolean comAcucar;
 
-    public Refrigerante(String id, String nome, String descricao, double preco, boolean comAcucar) {
-        super(id, nome, descricao, preco);
+    public Refrigerante(String nome, String descricao, double preco, boolean comAcucar) {
+        super( nome, descricao, preco);
         this.comAcucar = comAcucar;
     }
 

@@ -1,7 +1,7 @@
 package com.ambev.pratico2.model;
 
 import jakarta.persistence.Id;
-public abstract class Produto {
+public class Produto {
 
     @Id
     private String id;
@@ -9,11 +9,14 @@ public abstract class Produto {
     private String descricao;
     private double preco;
 
-    public Produto(String id, String nome, String descricao, double preco) {
-        this.id = id;
+    public Produto( String nome, String descricao, double preco) {
         this.nome = nome;
         this.descricao = descricao;
         this.preco = preco;
+    }
+
+    public Produto() {
+
     }
 
     //region Getters and Setters
