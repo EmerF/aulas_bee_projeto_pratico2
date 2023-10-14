@@ -6,7 +6,7 @@ import com.ambev.pratico2.interfaces.ImpostoRenda;
 public class Dev extends Funcionario implements CalculoAjudaCusto, ImpostoRenda {
 
     protected Dev(String nome, String cpf, String telefone, double salario, Endereco endereco) {
-        super(nome, cpf, telefone, salario);
+        super(nome, cpf, telefone, salario, endereco);
     }
 
     @Override

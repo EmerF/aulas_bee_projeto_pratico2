@@ -11,11 +11,14 @@ public abstract class Funcionario {
 
     private double salario;
 
-    protected Funcionario(String nome, String cpf, String telefone, double salario) {
+    private Endereco endereco;
+
+    protected Funcionario(String nome, String cpf, String telefone, double salario, Endereco endereco) {
         this.nome = nome;
         this.cpf = cpf;
         this.telefone = telefone;
         this.salario = salario;
+        this.endereco = endereco;
     }
 
     //region Getters and Setters
@@ -50,5 +53,14 @@ public abstract class Funcionario {
     public void setSalario(double salario) {
         this.salario = salario;
     }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
     //endregion
 }

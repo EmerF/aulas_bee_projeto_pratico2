@@ -6,11 +6,8 @@ import com.ambev.pratico2.interfaces.ImpostoRenda;
 
 public class Gerente extends Funcionario implements CalculoAjudaCusto, ImpostoRenda {
 
-    private Endereco endereco;
-
     protected Gerente(String nome, String cpf, String telefone, double salario, Endereco endereco) {
-        super(nome, cpf, telefone, salario);
-        this.endereco = endereco;
+        super(nome, cpf, telefone, salario, endereco);
     }
 
     @Override
