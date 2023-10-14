@@ -1,4 +1,4 @@
-# Instrucoes para clonar o projeto
+git# Instrucoes para clonar o projeto
 Seguir as instruçõe de fork que estão no doc descritivo do projeto2 no mural da aula
   
 # Crie uma branch com seu nome
